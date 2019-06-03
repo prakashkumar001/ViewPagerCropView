@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:background="#B6B6B6"
+                android:layout_height="match_parent">
+
+    <com.fenchtose.nocropper.CropperView
+            android:layout_centerInParent="true"
+            android:background="#ff282828"
+            android:id="@+id/cropper_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:id="@+id/btnCrop"
+            android:layout_alignParentEnd="true"
+            android:background="@color/colorPrimary"
+            android:textColor="#ffffff"
+            android:text="Crop"
+            android:layout_height="wrap_content"/>
+
+</RelativeLayout>
