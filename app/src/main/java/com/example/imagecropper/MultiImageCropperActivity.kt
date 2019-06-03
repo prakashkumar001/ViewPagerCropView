@@ -1,6 +1,7 @@
 package com.example.imagecropper
 
 import android.annotation.SuppressLint
+import android.app.ProgressDialog
 import android.graphics.Bitmap
 import android.os.AsyncTask
 import android.os.Bundle
@@ -110,6 +111,16 @@ class MultiImageCropperActivity : AppCompatActivity() {
 
          class AsynLoader : AsyncTask<Void, String, String>()
          {
+             var dialog:ProgressDialog ?=null
+
+             override fun onPreExecute() {
+                 super.onPreExecute()
+                 dialog= ProgressDialog(this@MultiImageCropperActivity)
+                 dialog!!.setTitle("Loading....")
+                 dialog!!.show()
+
+
+             }
              @SuppressLint("WrongThread")
              override fun doInBackground(vararg params: Void?): String {
 
@@ -142,6 +153,12 @@ class MultiImageCropperActivity : AppCompatActivity() {
              }
 
 
+             override fun onPostExecute(result: String?) {
+                 super.onPostExecute(result)
+
+                 dialog!!.dismiss()
+
+             }
              }
 
          AsynLoader().execute()
